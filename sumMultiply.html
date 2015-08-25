@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+		<title></title>
+	</head>
+	<body>
+      	<div id="page">
+            <hl id="header">Sum Multiply</hl>            
+        </div>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    	<script>
+
+        var num = [1,2,3,4];
+
+        function sum(array){
+         return array.reduce(function(previous, initial, index, arr){
+            return previous + initial;
+          });
+        }
+
+        function sum2(array){
+          var val = 0;
+          for(var i = 0; i < array.length; i++){
+            val += array[i];
+          }
+          return val;
+        }
+
+        function multiply(array){
+          return array.reduce(function(previous, initial, index, arr){
+            return previous * initial;
+          });
+        }
+
+        function multiply2(array){
+          var val = 1;
+          for(var i in array){ //shorthand
+            val *= array[i];
+          }
+          return val;
+        }
+
+        console.log(sum(num)); // 10
+        console.log('2: '+sum2(num)); //10
+        console.log('multiply: '+multiply(num)); // 24
+        console.log('multiply2: '+multiply2(num)); // 24
+    	</script>
+      
+
+	</body>
+
+</html>
