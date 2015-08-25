@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+		<title></title>
+	</head>
+	<body>
+      	<div id="page">
+            <hl id="header">Evaluate Expression</hl>            
+        </div>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    	<script>
+
+          function evaluateExpression(num1, num2, expression){
+            if(expression === '+')
+            	return num1 + num2;
+            else if(expression === '-')
+            	return num1 - num2;
+            else if(expression === '*')
+            	return num1 * num2;
+            else if(expression === '/')
+            	return num1 / num2;
+             else if(expression === '%')
+            	return num1 % num2;
+
+          };
+       
+       		console.log(evaluateExpression(4, 5, '+')); //9
+       		console.log(evaluateExpression(4, 5, '-')); //-1
+       		console.log(evaluateExpression(4, 5, '*')); //20
+       		console.log(evaluateExpression(4, 5, '/')); //.8
+       		console.log(evaluateExpression(7, 3, '%')); //1
+       		console.log(evaluateExpression(2, 3, '^')); //8
+
+    	</script>
+      
+
+	</body>
+
+</html>
