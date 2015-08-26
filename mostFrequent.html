@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+		<title></title>
+	</head>
+	<body>
+      	<div id="page">
+            <hl id="header">Most Frequent</hl>            
+        </div>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    	<script>
+          //solution 1
+          function mostFrequent(array){
+            var frequent, hold, frequency = 0, incr = 0;
+
+            while(array.length > 0){
+              hold = array[0];
+              array = array.filter(function(el, index, arr){
+                  if(hold == arr[index]) incr++;
+                  return arr[index] != hold;
+              });
+
+              if(incr > frequency){
+                frequency = incr;
+                frequent = hold;
+              }
+              incr = 0;
+            }
+            return frequent + ": " + frequency + " times";
+          };
+
+          //solution 2 - much more efficient
+          function mostFrequent2(array){
+            var frequent,frequency = 0, incr = 0;
+
+            for(var i =0; i < array.length; i++){
+              for(var j = i; j < array.length; j++){
+                  if(array[i] == arr[j]) incr++;
+              }
+              if(incr > frequency){
+                frequency = incr;
+                frequent = array[i];
+              }
+              incr = 0;
+            }
+            return frequent + ": " + frequency + " times";
+          };
+
+          var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]; 
+          var arr2=[3, 'a', 9,'b','b','b', 'a', 'a', 2, 3, 'a','b','b','b', 3, 'a', 2, 4, 9, 3]; 
+          var arr3=[9, 1, 4, 5, 9, 8, 8, 8];
+
+          console.time('function #1');
+          console.log(mostFrequent(arr1)); //a: 5 times
+          console.log(mostFrequent(arr2)); //b: 6 times
+          console.log(mostFrequent(arr3)); //8: 3 times
+          console.timeEnd('function #1');
+
+          console.time('function #2');
+          console.log("2: "+mostFrequent(arr1)); //a: 5 times
+          console.log("2: "+mostFrequent(arr2)); //b: 6 times
+          console.log("2: "+mostFrequent(arr3)); //8: 3 times
+          console.timeEnd('function #2');
+          
+    	</script>
+      
+
+	</body>
+
+</html>

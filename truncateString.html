@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+		<title></title>
+	</head>
+	<body>
+      	<div id="page">
+            <hl id="header">Truncate String</hl>            
+        </div>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    	<script>
+          //solution 1
+          function truncateString(s, length){
+            var arr = [];
+            for(var i = 0; length--; i++){
+              arr.push([s[i]]);
+            }
+            return arr.join('');
+          };
+
+          //solution 2 - muuuch more efficient
+          function truncateString2(s, length){
+            if(typeof s == "string" && length > 0)
+              return s.slice(0,length);
+          };
+
+           console.time('function #1');
+           console.log(truncateString('Robin Singh',4)); //"Robi"
+           console.log(truncateString('Victor',1)); //"V"
+           console.timeEnd('function #1');
+
+          console.time('function #2');
+          console.log("2: "+truncateString2('Robin Singh',4)); //"Robi"
+          console.log("2: "+truncateString2('Victor',1)); //"V"
+          console.timeEnd('function #2');
+
+          
+    	</script>
+      
+
+	</body>
+
+</html>
